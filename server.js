@@ -1,4 +1,4 @@
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') { require('dotenv').config(); }
 const express = require('express');
 const cors = require('cors');
 const Anthropic = require('@anthropic-ai/sdk');
@@ -126,6 +126,7 @@ app.post('/courses-libre', async (req, res) => {
 app.listen(process.env.PORT, () => {
   console.log(`Serveur lance sur le port ${process.env.PORT}`);
 });
+
 
 
 
