@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 console.log('CLE API:', process.env.ANTHROPIC_API_KEY ? 'PRESENTE' : 'ABSENTE'); console.log('TEST:', process.env.TEST);
 
-const apiKey = process.env.ANTHROPIC_API_KEY || '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'; console.log('KEY DEBUG:', apiKey ? apiKey.substring(0,10) : 'VIDE'); const anthropic = new Anthropic({ apiKey: apiKey });
+const apiKey = process.env.ANTHROPIC_API_KEY || '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'; console.log('KEY DEBUG:', apiKey ? apiKey.substring(0,10) : 'VIDE'); const anthropic = new Anthropic({ apiKey: apiKey });
 
 const legumesParMois = {
   janvier: 'poireau, endive, chou, panais, celeri',
@@ -127,6 +127,7 @@ app.post('/courses-libre', async (req, res) => {
 app.listen(process.env.PORT, () => {
   console.log(`Serveur lance sur le port ${process.env.PORT}`);
 });
+
 
 
 
