@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 console.log('CLE API:', process.env.ANTHROPIC_API_KEY ? 'PRESENTE' : 'ABSENTE'); console.log('TEST:', process.env.TEST);
 
-const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const apiKey = process.env.ANTHROPIC_API_KEY; console.log('KEY DEBUG:', apiKey ? apiKey.substring(0,10) : 'VIDE'); const anthropic = new Anthropic({ apiKey: apiKey });
 
 const legumesParMois = {
   janvier: 'poireau, endive, chou, panais, celeri',
@@ -127,6 +127,7 @@ app.post('/courses-libre', async (req, res) => {
 app.listen(process.env.PORT, () => {
   console.log(`Serveur lance sur le port ${process.env.PORT}`);
 });
+
 
 
 
