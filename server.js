@@ -6,6 +6,7 @@ const Anthropic = require('@anthropic-ai/sdk');
 const app = express();
 app.use(cors());
 app.use(express.json());
+console.log('CLE API:', process.env.ANTHROPIC_API_KEY ? 'PRESENTE' : 'ABSENTE');
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
@@ -126,6 +127,7 @@ app.post('/courses-libre', async (req, res) => {
 app.listen(process.env.PORT, () => {
   console.log(`Serveur lance sur le port ${process.env.PORT}`);
 });
+
 
 
 
